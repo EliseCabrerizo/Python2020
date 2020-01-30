@@ -53,10 +53,10 @@ def subject_detail(request, subject_id):
         return HttpResponse("Suppression faite!", status=204)
 
 def predict_activity(unscaled_data):
-    from sklearn.externals import joblib
-    colonnes        = ['ID','AGE','SPORT','label','xchest','ychest','zchest','ecg','resp','xwrist','ywrist','zwrist','bvp','temp']
-    path_to_model   = "../model_simple.sav"
-    path_for_scaler = "../scaler.sav"
+    import joblib
+    colonnes        = ['IDSubject','AGE','SPORT','label','xchest','ychest','zchest','ecg','resp','xwrist','ywrist','zwrist','bvp','temp']
+    path_to_model   = "C:/Users/Elise/Documents/Esilv/5emeAnnee/PythonForDataAnalysis/Projet/model_simple.sav"
+    path_for_scaler = "C:/Users/Elise/Documents/Esilv/5emeAnnee/PythonForDataAnalysis/Projet/scaler.sav"
     unscaled_data   = [unscaled_data[colonne] for colonne in colonnes]
     model           = joblib.load(path_to_model)
     scaler          = joblib.load(path_for_scaler)

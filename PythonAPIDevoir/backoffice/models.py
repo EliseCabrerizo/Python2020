@@ -18,7 +18,7 @@ class Subject(models.Model):
     temp = models.FloatField()
 
     #the dependent variable : y
-    activity = models.FloatField(null=True)
+    activity = models.IntegerField(null=True)
     #Just to give a date to the creation of the object instance
     created = models.DateTimeField(auto_now_add=True)
 
