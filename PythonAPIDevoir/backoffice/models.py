@@ -2,7 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Subject(models.Model):
+    WEIGHT = models.IntegerField()
     AGE = models.IntegerField()
+    HEIGHT = models.IntegerField()
     SPORT = models.IntegerField()
     label = models.FloatField()
     xchest = models.FloatField()

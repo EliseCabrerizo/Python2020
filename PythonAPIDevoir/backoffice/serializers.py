@@ -2,7 +2,9 @@ from rest_framework import serializers
 from backoffice.models import Subject
 
 class SubjectSerializer(serializers.Serializer) :
+    WEIGHT = serializers.IntegerField()
     AGE = serializers.IntegerField()
+    HEIGHT = serializers.IntegerField()
     SPORT = serializers.IntegerField()
     label = serializers.FloatField()
     xchest = serializers.FloatField()
@@ -21,7 +23,9 @@ class SubjectSerializer(serializers.Serializer) :
         return Subject.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
+        instance.WEIGHT = validated_data.get('WEIGHT',instance.WEIGHT)
         instance.AGE = validated_data.get('AGE',instance.AGE)
+        instance.HEIGHT = validated_data.get('HEIGHT',instance.HEIGHT)
         instance.SPORT = validated_data.get('SPORT',instance.SPORT)
         instance.label = validated_data.get('label',instance.label)
         instance.xchest = validated_data.get('xchest',instance.xchest)

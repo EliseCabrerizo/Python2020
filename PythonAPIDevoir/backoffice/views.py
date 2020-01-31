@@ -54,7 +54,7 @@ def subject_detail(request, subject_id):
 
 def predict_activity(unscaled_data):
     import joblib
-    colonnes        = ['AGE','SPORT','label','xchest','ychest','zchest','ecg','resp','xwrist','ywrist','zwrist','bvp','temp']
+    colonnes        = ['WEIGHT','AGE','HEIGHT','SPORT','label','xchest','ychest','zchest','ecg','resp','xwrist','ywrist','zwrist','bvp','temp']
     path_to_model   = "C:/Users/Elise/Documents/Esilv/5emeAnnee/PythonForDataAnalysis/Projet/model_simple.sav"
     path_for_scaler = "C:/Users/Elise/Documents/Esilv/5emeAnnee/PythonForDataAnalysis/Projet/scaler.sav"
     unscaled_data   = [unscaled_data[colonne] for colonne in colonnes]
