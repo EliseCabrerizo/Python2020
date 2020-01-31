@@ -70,8 +70,8 @@ def predict(request):
     Renvoie un subject avec l'activité completee
     (Attend une activity innexistante == null)
     """
-    #if request.method == 'GET':
-     #   return JsonResponse(serializer.errors, status=400)
+    if request.method == 'GET':
+        return JsonResponse(serializer.errors, status=400)
 
     if request.method == 'POST':
         data        = JSONParser().parse(request)
