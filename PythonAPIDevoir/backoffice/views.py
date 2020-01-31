@@ -34,7 +34,7 @@ def i_want_a_list(request):
 @csrf_exempt
 def subject_detail(request, subject_id):
     try:
-        subject = Subject.objects.get(IDSubject=subject_id)
+        subject = Subject.objects.get(pk=subject_id)
     except Subject.DoesNotExist:
         return HttpResponse(str(subject_id), status=404)
     if request.method == "GET":
